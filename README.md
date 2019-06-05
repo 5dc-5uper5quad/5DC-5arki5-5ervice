@@ -28,16 +28,22 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ## Development
 
+CRUD api
+
+GET: '/:gameid' - This route should send back the reviews for a game by the game ID
+POST: '/' - This route should post new review
+PUT: '/:gameid' - This route should update the comment post with new edit
+DELETE: '/:gameid' - This route should delete the lastest post
+
 ### Installing Dependencies
 
 From within the root directory:
 
-
-npm install -g webpack
-npm install
-npm install axios
-npm install faker
-npm install styled-components
+Ensure your DB is up.
+npm install (installs all dependencies)
+npm start (server)
+npm run react-dev (webpack)
+npm run seed-db (to seed)
 
 ```
 
