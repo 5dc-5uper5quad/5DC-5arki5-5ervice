@@ -1,5 +1,6 @@
 const express = require('express');
-const { Review } = require('../database/index');
+// const { Review } = require('../database/mongoDB/index');
+const pg = require('pg');
 const bodyParser = require('body-parser');
 
 let app = express();
