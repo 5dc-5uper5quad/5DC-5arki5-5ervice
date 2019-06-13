@@ -37,9 +37,19 @@ DELETE: '/:gameid' - This route should delete the lastest post
 
 ```
 
+=======
+CRUD api
+
+GET: '/:gameid' - This route should send back the reviews for a game by the game ID
+POST: '/' - This route should post new review
+PUT: '/:gameid' - This route should update the comment post with new edit
+DELETE: '/:gameid' - This route should delete the lastest post
+
+
 ### Installing Dependencies
 
 From within the root directory:
+
 
 ```
 Ensure your DB is up.
@@ -49,4 +59,3 @@ npm run react-dev (webpack)
 npm run seed-db (to seed)
 
 ```
-
