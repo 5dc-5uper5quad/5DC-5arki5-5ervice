@@ -12,21 +12,20 @@
     "testEnvironment": "node"
   },
   "scripts": {
-    "seed-db": "node ./database/data/seed.js",
+    "seedPG": "node database/generator/makeReviews.js",
+    "postgres": "pg_ctl -D /usr/local/var/postgres start",
     "start": "nodemon server/index.js",
-    "build": "webpack",
-    "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon server/index.js",
+    "build": "webpack -d --watch",
     "test": "jest"
   },
   "dependencies": {
     "async": "^3.0.1",
     "axios": "^0.19.0",
-    "chai": "^4.2.0",
     "express": "^4.17.0",
     "faker": "^4.1.0",
     "mongodb": "^3.2.4",
     "mongoose": "^5.5.9",
+    "pg": "^7.11.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "styled-components": "^4.2.0",
@@ -40,6 +39,7 @@
     "babel-loader": "^8.0.6",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "jest": "^24.8.0",
+    "chai": "^4.2.0",
     "mocha": "^6.1.4",
     "mongoose-seedr": "^0.4.4",
     "nodemon": "^1.19.1",
