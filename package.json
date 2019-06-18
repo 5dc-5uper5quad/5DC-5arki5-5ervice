@@ -12,8 +12,11 @@
     "testEnvironment": "node"
   },
   "scripts": {
-    "seedPG": "node database/generator/makeReviews.js",
-    "postgres": "pg_ctl -D /usr/local/var/postgres start",
+    "seed": "node database/postgresDB/seedPostgres.js",
+    "cassyStart": "brew services start cassandra",
+    "cassyStop": "brew services stop cassandra",
+    "postgresStart": "pg_ctl -D /usr/local/var/postgres start",
+    "postgresStop": "Pg_ctl -D /usr/local/var/postgres stop",
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
     "test": "jest"
@@ -21,6 +24,7 @@
   "dependencies": {
     "async": "^3.0.1",
     "axios": "^0.19.0",
+    "cassandra-driver": "^4.1.0",
     "express": "^4.17.0",
     "faker": "^4.1.0",
     "mongodb": "^3.2.4",

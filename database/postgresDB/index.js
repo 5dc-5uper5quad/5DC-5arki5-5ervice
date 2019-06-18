@@ -9,44 +9,27 @@ const pool = new Pool({
 
 pool.connect((err) => {
   if (err) {
-    console.log('Connection error', err.stack);
+    console.log('Connection error', err);
   } else {
-    console.log('Connected to database');
+    console.log('Connected to Postgres database');
   }
 });
-
 
 /***********************************************/
 // This route should send back the reviews for a game by the game ID
 const getGameId = (req, res) => {
-  const id = parseInt(req.params.gameid);
-  pool.query('SELECT * FROM reviews WHERE game_id = $1', [id], (err, results) => {
-    console.log('RESULTS HERE:', results);
+  const id = Number(req.params.gameid);
+  console.log('ID from Postgres', typeof id, id);
+  pool.query(`SELECT * FROM reviews WHERE game_id = ${id}`, (err, results) => {
     if (err) {
       throw err;
     }
-    res.status(200).json(results.rows);
+    let output = [];
+    for (var i = 0; i < 10; i++) {
+      output.push(results.rows[i]);
+    }
+    res.status(200).json(output);
   });
-}
-
-/***********************************************/
-// This route should post new review
-const createReview = (req, res) => {
-  // console.log('REQ', req);
-  // pool.query('INSERT INTO reviews (');
-}
-
-/***********************************************/
-// This route should update (PUT) the post with submitted edits
-const updateUser = (request, response) => {
-
-}
-
-/***********************************************/
-// need DELETE request which deletes an item
-
-const deleteUser = (request, response) => {
-  
 }
 
 const fileLoader = (table, filepath, callback) => {
