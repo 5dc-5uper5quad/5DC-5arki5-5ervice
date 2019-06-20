@@ -21,7 +21,6 @@ class App extends React.Component {
   get() {
     axios.get("http://localhost:3007/57")
       .then(res => {
-        console.log(res)
         const reviews = res.data;
         reviews.sort((a, b) => {
           return b.helpfulComment - a.helpfulComment;

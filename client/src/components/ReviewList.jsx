@@ -12,10 +12,10 @@ const ReviewList = (props) => {
       {props.reviews.map(review =>
       <Container>
         <ReviewBoxLeft>
-          <img src={review.user[0].user_icon} width="36" height="36"></img>
-          <UserCol>{review.user[0].username}
-          <ProductsOwnedNReviews>{review.user[0].products_owned} products in account</ProductsOwnedNReviews>
-          <NumberofReviews>{review.user[0].number_of_reviews} reviews</NumberofReviews>
+          <img src={review.user_icon} width="36" height="36"></img>
+          <UserCol>{review.username}
+          <ProductsOwnedNReviews>{review.products_owned} products in account</ProductsOwnedNReviews>
+          <NumberofReviews>{review.number_of_reviews} reviews</NumberofReviews>
           </UserCol>
         </ReviewBoxLeft>
         <div>
@@ -34,7 +34,7 @@ const ReviewList = (props) => {
             )}
           </div>
           <HoursPlayed>
-            {review.user[0].hours_played} hrs on record
+            {review.hours_played} hrs on record
           </HoursPlayed>
         <DatePosted>POSTED: MAY {review.dayPosted}</DatePosted>
         <ReviewComment>{review.comment}</ReviewComment>
