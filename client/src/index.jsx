@@ -4,7 +4,6 @@ import axios from 'axios';
 import ReviewList from './components/ReviewList.jsx';
 import CommentBox from './components/CommentBox.jsx';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
