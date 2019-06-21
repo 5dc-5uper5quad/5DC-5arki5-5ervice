@@ -1,6 +1,6 @@
 # Project Name
 
-> Project description
+> This is the service for Steam's "reviews" page. Players can make comments as well as update or delete their comments. Players must comply with the rules and guidelines. The service will only pull 15 reviews at any time. 
 
 ## Related Projects
 
